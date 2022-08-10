@@ -2,11 +2,16 @@ require('dotenv').config()
 const express = require('express')
 const app = express()
 
+//View Engine
+app.set('view engine', 'jsx')
+app.engine('jsx', require('express-react-views').createEngine())
+
+//Controllers Route
 app.use('/places', require('./controllers/places'))
 
 //Homepage Route
 app.get('/', (req, res) =>{
-    res.send("Hello world")
+    res.render('home')
 })
 
 //Wildcard Route
