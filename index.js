@@ -16,7 +16,7 @@ app.get('/', (req, res) =>{
 
 //Wildcard Route
 app.get('*', (req,res) =>{
-    res.status(404).send('<h1>404 PAGE</h1>')
+    res.status(404).render('error404')
 })
 
 app.listen(process.env.PORT)
