@@ -21,7 +21,7 @@ ROUTES:
 DATA:
 Places
 |Field| Type |
-|*----|*-----|
+|:----|:-----|
 |_id  | Object ID|
 |name | String |
 |city | String |
