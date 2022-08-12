@@ -8,7 +8,7 @@ router.get('/', (req,res) => {
         cuisines: 'Ramen, Japanese',
         pic: '/images/ramen.jpg'
       }, {
-        name: 'BBQ Boys',
+        name: 'City Boys BBQ',
         city: 'Phoenix',
         state: 'AZ',
         cuisines: 'American, BBQ',
@@ -21,9 +21,8 @@ router.get('/', (req,res) => {
 router.get('/new', (req, res) => {
     res.render('places/new')
 })
-
-router.post('/new', (req, res) => {
-    res.send('places/new')
+router.post('/', (req, res) => {
+    console.log(req.body)
+    res.send('POST /places')
 })
-
 module.exports = router
