@@ -51,7 +51,14 @@ router.get('/:id/edit', (req, res) => {
  })
 
 router.post('/:id/rant', (req, res) => {
-    res.send('GET /places/:id/rant stub')
+    db.Place.create(req.body)
+    .then(() => {
+        res.redirect('places')
+    })
+    .catch(err => {
+        console.log('err', err)
+        res.render('error404')
+    })
 })
 
 router.delete('/:id/rant/:rantId', (req, res) => {
